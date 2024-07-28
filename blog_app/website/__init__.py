@@ -4,7 +4,7 @@ from os import path
 from flask_login import LoginManager
 import os
 
-static_dir = os.path.abspath('./static')
+static_dir = os.path.abspath('/static')
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
