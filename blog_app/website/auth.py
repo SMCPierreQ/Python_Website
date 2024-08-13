@@ -43,9 +43,9 @@ def sign_up():
         elif username_exists:
             flash('Username is already in use.', category='error')
         elif password1 != password2:
-            flash('Passwords don\'t match1', category='error')
+            flash('Passwords don\'t match.', category='error')
         elif len(username) < 2:
-            flash('Username is to short', category='error')
+            flash('Username is too short.', category='error')
         elif len(password1) < 8:
             flash('Password must atleast be 8 characters long.', category='error')
         elif len(email) < 4:
