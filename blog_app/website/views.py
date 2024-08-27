@@ -13,7 +13,8 @@ def home():
 @views.route("/blog")
 @login_required
 def blog():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("blog.html", user=current_user, posts=posts)
 
 
