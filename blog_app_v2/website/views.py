@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+from PIL import Image
+import secrets
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Comment
@@ -91,4 +95,13 @@ def delete_comment(comment_id):
         db.session.commit()
     return redirect(url_for('views.blog'))
 
-
+def save_picture(form_picture):
+    path = Path("blog_app/static/profile_pics")
+    random_hex=secrets.token.hex(8)
+    _,f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(path, picture_fn)
+    output_size = (125, 125,)
+    i = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(picture_path)
