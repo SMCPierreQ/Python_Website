@@ -1,16 +1,42 @@
 {% extends "template.html" %}{% block title %}Home{% endblock %}
 {% block content %}
-<h1 align="center">Make a Post</h1>
-<form method="POST">
-    <textarea name="text" id="text" class="form-control"></textarea>
-    <br />
-    <div align="center">
-        <button type="submit" class="btn btn-primary btn-lg">Post</button>
-    </div>
-</form>
-<br />
-<div align="center">
-    <a href="/home"
-    ><button type="submit" class="btn btn-secondary btn-lg">Back</button></a>
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create a Post</legend>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label")}} 
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}  
+                    <div class="invalid-feedback"> 
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+            {% endif %}	
+        	</div>
+    
+			<div class="form-group">
+                {{ form.text.label(class="form-control-label")}}
+                
+                {% if form.text.errors %}
+                    {{ form.text(class="form-control form-control-lg is-invalid") }}  
+                    <div class="invalid-feedback"> 
+                        {% for error in form.text.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.text(class="form-control form-control-lg") }}
+            {% endif %}	
+            </div>
+		</fieldset>
+		</br>
+		<div class="form-group">
+			{{ form.submit(class="btn btn-outline-info") }}
+	</form>
 </div>
 {% endblock %}
