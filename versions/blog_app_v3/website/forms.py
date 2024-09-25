@@ -42,6 +42,6 @@ class UpdateAccountForm(FlaskForm):
             
 
 class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    text = TextAreaField('Text', validators=[DataRequired()])
+    title = StringField('title', validators=[DataRequired()])
+    text = TextAreaField('text', validators=[DataRequired()])
     submit = SubmitField('Update')
