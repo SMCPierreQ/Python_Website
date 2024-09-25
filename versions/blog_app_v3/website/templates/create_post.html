@@ -1,4 +1,4 @@
-{% extends "template.html" %}{% block title %}Home{% endblock %}
+{% extends "template.html" %}{% block title %}Create a Post{% endblock %}
 {% block content %}
 <div class="content-section">
     <form method="POST" action="">
@@ -17,9 +17,9 @@
                 {% else %}
                     {{ form.title(class="form-control form-control-lg") }}
             {% endif %}	
-        	</div>
+            </div>
     
-			<div class="form-group">
+            <div class="form-group">
                 {{ form.text.label(class="form-control-label")}}
                 
                 {% if form.text.errors %}
@@ -33,10 +33,11 @@
                     {{ form.text(class="form-control form-control-lg") }}
             {% endif %}	
             </div>
-		</fieldset>
-		</br>
-		<div class="form-group">
-			{{ form.submit(class="btn btn-outline-info") }}
-	</form>
+        </fieldset>
+        </br>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+    </form>
 </div>
+</br>
 {% endblock %}

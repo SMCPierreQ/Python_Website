@@ -5,4 +5,40 @@
 
 }
 
+.carousel{
+	background-color: rgba(0,0,0,0.6);
+}
 
+.carousel-caption{
+	background-color: rgba(0,0,0,0.25);
+}
+
+.carousel-item > img{
+    height: 510px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.h1{
+ text-align: center;
+}
+
+.container{
+    border-radius: 5px;
+    padding: 3px;
+    border: 3px solid black
+}
+
+p{
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+}
+
+.img-fluid{
+    min-width: auto;
+}
+
+.homepage-divider{
+    margin: 2rem 0;
+    width: 100%;
+}
