@@ -1,16 +1,207 @@
+/* General headings, texts, fonts group */
+p{
+    font-size: 18px;
+    font-family: 'Noto Sans Display';
+}
+
+.text-muted{
+    font-family: 'Noto Sans Display';
+}
+
+/* Anything in body tag (navbar, container, footer, etc included) */
+body {
+    min-height: 100vh;
+    background-color: #6e6e6e;
+}
+
+.container{
+    min-height: 77.5vh;
+    align-content: center;
+    border-radius: 5px;
+    padding: 4px;
+    border: 3px solid black;
+    background-color: #f5f5f5;
+}
+
+
+.btn-outline-info{
+    color:#f01e2c;
+    border-color:#f01e2c;
+    font-family: 'Montserrat';
+}
+
+.btn-outline-info:hover{
+    background-color: #f01e2c;
+    border-color: #f01e2c; 
+}
+
+.btn-outline-info:focus{
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+
+.form-control:focus{
+    border-color: #6e6e6e;
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+/* Home page CSS */
+.col-lg-9{
+    align-content: center;
+}
+
+.homepage-content{
+    text-align: center;
+}
+
+.homepage-divider{
+    margin: 2rem 0;
+    width: 100%;
+}
+
+
+.img-fluid{
+    min-width: auto;
+}
+
+#titleHomepage{
+    font-family: 'Montserrat';
+}
+
+/* Account Page CSS */
+.account-heading{
+    font-family: 'Montserrat'
+}
+
+.text-secondary{
+    font-family: 'Zen Kaku Gothic New';
+}
+
+.legend-account{
+    font-family: 'Montserrat';
+}
+
+.form-control-label{
+    font-family: 'Noto Sans Display';
+}
+
+.form-control-lg{
+    font-family: 'Noto Sans Display';
+}
+
+.label-picture{
+    font-family: 'Noto Sans Display';
+}
+
+.form-control-file{
+    font-family: 'Noto Sans Display';
+}
+
+/* Login Page CSS */
+.login-heading{
+    font-family: 'Montserrat';
+}
+
+.label-login{
+    font-family: 'Noto Sans Display';
+}
+
+.form-control{
+    font-family: 'Noto Sans Display';
+}
+
+/* Sign Up Page CSS */
+.legend-signup{
+    font-family: 'Montserrat';
+}
+
+.signup-redirect{
+    font-family: 'Noto Sans Display';
+    color:#f01e2c;
+}
+
+.signup-redirect:hover{
+    color: #d1001f;;
+}
+
+/* Navbar CSS */
+.bg-dark{
+    background-color: #0a0a0a !important; 
+}
+
+.nav-link {
+    margin-left: 3px;
+    margin-right: 3px;
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 300;
+    color: #f5f5f5 !important;
+}
+
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: #f01e2c;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+/* Footer CSS */
+.sticky-footer{
+    position: sticky;
+    align-content: center;
+    top: 100%;
+}
+
+#footerCopyright{
+    font-size: 14px;
+    font-family: 'Zen Kaku Gothic New';
+}
+
+#footerLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footerLink{
+    font-size: 16px;
+}
+
+/* Profile picture */
 .article-img {
     height: 65px;
     width: 65px;
     margin: 16px;
-
 }
 
+/* Carousel css */
 .carousel{
 	background-color: rgba(0,0,0,0.6);
 }
 
 .carousel-caption{
-	background-color: rgba(0,0,0,0.25);
+	background-color: rgba(0,0,0,0.5);
+
+}
+
+.carousel-caption h5{
+    font-size: 24px;
+    font-family: 'Montserrat';
+}
+
+.carousel-caption p{
+    font-size: 14px;
+    font-family: 'Noto Sans Display';
 }
 
 .carousel-item > img{
@@ -19,26 +210,3 @@
     object-position: center;
 }
 
-.h1{
- text-align: center;
-}
-
-.container{
-    border-radius: 5px;
-    padding: 3px;
-    border: 3px solid black
-}
-
-p{
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
-}
-
-.img-fluid{
-    min-width: auto;
-}
-
-.homepage-divider{
-    margin: 2rem 0;
-    width: 100%;
-}
