@@ -1,13 +1,16 @@
 {% extends "template.html" %} {% block title %}Home{% endblock %}
 {% block content %}
+<!-- Page header -->
 <h1 align="center">{% block header %}Posts{% endblock %}</h1>
+<!-- Div for page content -->
 <div id="posts">
 	{% for post in posts %}
 	<div class="card border-dark">
+    <!-- Profile picture display -->
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.user.image_file) }}">
 		<div class="card-header d-flex justify-content-between align-items-center">
 			<a class="post-username" href="/posts/{{post.user.username}}">{{post.user.username}}</a>
-				<div><!-- this is a new div dropdown menu. -->
+				<div><!-- Div for dropdown menu. -->
 					{% if user.id == post.author %}
 					<div class="btn-group">
             <!-- Dropdown button-->
@@ -24,13 +27,15 @@
 						</ul>
 					</div>
 					{% endif %}
-				</div> <!-- This is the end div for dropdown menu -->
+				</div>
       </div>
+      <!-- Div for individual posts-->
 			<div class="card-body">
         <div class="card-text post-title">{{post.title}}</div>
 				<br />
 				<div class="card-text post-content">{{post.text}}</div>
 				<br />
+        <!-- Comments -->
 				<div class="collapse" id="comments-{{post.id}}">
 					<div class="card">
 						<div class="card-body" id="comments-expanded-{{post.id}}">
@@ -44,6 +49,7 @@
                   <small class="text-muted"> {{comment.date_created}}</small>
                   {% if user.id == comment.author or user.id == post.author %}
                   <div class ="btn-group">
+                    <!-- Comment dropdown menu -->
                     <button
                     type="button"
                     class="btn btn-sm btn-primary dropdown-toggle"
@@ -74,6 +80,7 @@
           <small class="text-muted" id="noneComments">No Comments</small>
           {% endif %}
         </p>
+        <!-- Form for submitting comments -->
         <form
           class="input-group mb-3"
           method="POST"
@@ -94,6 +101,7 @@
 	<br /> 
   {% endfor %}
 </div>
+  <!-- For pagination to be visible-->
   {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
     {% if page_num %}
       {% if posts.page == page_num %}
@@ -108,6 +116,7 @@
 
 {% block footer %}
 <br>
+<!-- Button to create post-->
 <div align="center">
 	<a href="/create-post">
 		<button type="button" class="btn btn-primary btn-lg">

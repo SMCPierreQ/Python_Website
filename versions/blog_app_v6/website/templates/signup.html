@@ -1,14 +1,18 @@
 {% extends "template.html" %}{% block title %}Sign Up{% endblock %}
 {% block content %}
-
+<!-- Div for content section-->
 <div class="content-section">
+    <!-- Setting form method as POST -->
     <form method="POST" action="">
         {{ form.hidden_tag() }}
-        <legend class="border-bottom pb-2 legend-title text-center">Sign Up</legend>
+        <!-- Fieldset tag to group form inputs-->
         <fieldset class="form-group">
+            <legend class="border-bottom pb-2 legend-title text-center">Sign Up</legend>
+            <!-- Form input for username-->
             <div class="form-input">
                 {{ form.username.label(class="form-control-label")}}    
                 {% if form.username.errors %}
+                    <!-- If errors, username field will be shown with error class -->
                     {{ form.username(class="form-control form-control-lg is-invalid") }}  
                     <div class="invalid-feedback"> 
                         {% for error in form.username.errors %}
@@ -16,13 +20,16 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, show username field normally -->
                     {{ form.username(class="form-control form-control-lg") }}
             {% endif %}	
         	</div>
+
+            <!-- Form input for email -->
 			<div class="form-input">
                 {{ form.email.label(class="form-control-label")}}
-                
                 {% if form.email.errors %}
+                    <!-- If errors, email field will be shown with error class -->
                     {{ form.email(class="form-control form-control-lg is-invalid") }}  
                     <div class="invalid-feedback"> 
                         {% for error in form.email.errors %}
@@ -30,14 +37,16 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, show email field normally -->
                     {{ form.email(class="form-control form-control-lg") }}
             {% endif %}	
         	</div>
-	
+
+            <!-- Form input for password -->
 			<div class="form-input">
-                {{ form.password.label(class="form-control-label")}}
-                
+                {{ form.password.label(class="form-control-label")}} 
                 {% if form.password.errors %}
+                    <!-- If errors, password field will be shown with error class-->
                     {{ form.password(class="form-control form-control-lg is-invalid") }}  
                     <div class="invalid-feedback"> 
                         {% for error in form.password.errors %}
@@ -45,14 +54,16 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, show password field normally -->
                     {{ form.password(class="form-control form-control-lg") }}
             {% endif %}	
         	</div>
-	
+            
+            <!-- Form input for confirm password -->
 			<div class="form-input">
                 {{ form.confirm_password.label(class="form-control-label")}}
-                
                 {% if form.confirm_password.errors %}
+                    <!-- If errors, confirm password field will be shown with error class-->
                     {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}  
                     <div class="invalid-feedback"> 
                         {% for error in form.confirm_password.errors %}
@@ -60,12 +71,15 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, show confirm password field normally-->
                     {{ form.confirm_password(class="form-control form-control-lg") }}
             {% endif %}	
+            <!-- Redirect users to login screen who already have an account -->
             <small class="text-muted">Already have an account? <a class="ml-2 signup-redirect" href="{{ url_for('auth.login') }}">Login</a>
         	</div>
 		</fieldset>
 		</br>
+        <!-- Submit button for form -->
 		<div class="form-group" align="center">
 			{{ form.submit(class="btn btn-outline-info") }}
         </div>
