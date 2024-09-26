@@ -7,9 +7,9 @@ from .models import User
 
 class RegistrationForm(FlaskForm):
     #Form for user registration
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    username = StringField('Username', validators=[DataRequired(), Length(min=3, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
@@ -27,9 +27,9 @@ class RegistrationForm(FlaskForm):
         
 class UpdateAccountForm(FlaskForm):
     #Form for updating user information
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    username = StringField('Username', validators=[DataRequired(), Length(min=3, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    picture = FileField('Update Profile Picture', validators= [FileAllowed(['jpg', 'png'])])
+    picture = FileField('Update Profile Picture', validators= [FileAllowed(['jpg', 'png', 'jpeg', 'webp'])])
     submit = SubmitField('Update')
 
     #Validates username to check if it is taken
@@ -48,6 +48,6 @@ class UpdateAccountForm(FlaskForm):
             
 class PostForm(FlaskForm):
     #Form for creating or updating posts
-    title = StringField('Title', validators=[DataRequired()])
-    text = TextAreaField('Text', validators=[DataRequired()])
-    submit = SubmitField('Update')
+    title = StringField('Title', validators=[DataRequired(), Length(max=50)])
+    text = TextAreaField('Text', validators=[DataRequired(), Length(max=1500)])
+    submit = SubmitField('Post')
