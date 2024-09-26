@@ -171,6 +171,33 @@ body {
     font-family: 'Montserrat';
 }
 
+/* Carousel css */
+.carousel{
+	background-color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+}
+
+.carousel-caption{
+	background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+.carousel-caption h5{
+    font-size: 24px;
+    font-family: 'Montserrat';
+}
+
+.carousel-caption p{
+    font-size: 14px;
+    font-family: 'Noto Sans Display';
+}
+
+.carousel-item > img{
+    height: 510px;
+    object-fit: contain;
+    object-position: center;
+}
+
 /* Account Page CSS */
 .account-information{
     text-align: center;
@@ -182,10 +209,6 @@ body {
 
 .text-secondary{
     font-family: 'Zen Kaku Gothic New';
-}
-
-.legend-account{
-    font-family: 'Montserrat';
 }
 
 .form-control-lg{
@@ -280,6 +303,32 @@ body {
     background-color: #f01e2c;
 }
 
+/* About Page CSS */
+.about-hero{
+    background-color: #d1001f;
+}
+
+.display-5{
+    color:#0a0a0a;
+}
+
+.lead{
+    color:#0a0a0a;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.about-img{
+    width: 120px;
+    height: 120px;
+}
+
+.about-names{
+    font-family: "Montserrat";
+    font-size: 24px;
+}
+
+
 /* Navbar CSS */
 .bg-dark{
     background-color: #0a0a0a !important; 
@@ -339,33 +388,3 @@ body {
     width: 65px;
     margin: 16px;
 }
-
-/* Carousel css */
-.carousel{
-	background-color: rgba(0,0,0,0.6);
-    border-radius: 5px;
-}
-
-.carousel-caption{
-	background-color: rgba(0,0,0,0.5);
-    border-radius: 5px;
-}
-
-.carousel-caption h5{
-    font-size: 24px;
-    font-family: 'Montserrat';
-}
-
-.carousel-caption p{
-    font-size: 14px;
-    font-family: 'Noto Sans Display';
-}
-
-.carousel-item > img{
-    height: 510px;
-    object-fit: contain;
-    object-position: center;
-}
-
-/* Miscellaneous CSS */
-

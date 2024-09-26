@@ -15,6 +15,7 @@ views = Blueprint("views", __name__)
 def home():
     return render_template("home.html", user=current_user)
 
+
 @views.route("/blog")
 @login_required
 def blog():
@@ -152,3 +153,7 @@ def update_post(id):
         form.text.data = post.text
         image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template("update_post.html", form=form, user=current_user, post=post, image_file=image_file)
+
+@views.route("/about")
+def about():
+    return render_template("about.html", user=current_user)
