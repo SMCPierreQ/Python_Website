@@ -1,0 +1,44 @@
+{% extends "template.html" %}{% block title %}Update Post{% endblock %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <legend class="border-bottom mb-3 pb-2 legend-title text-center">Update Post</legend>
+        <fieldset class="form-group">
+            <div class="form-input">
+                {{ form.title.label(class="form-control-label")}} 
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}  
+                    <div class="invalid-feedback"> 
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+            {% endif %}	
+        	</div>
+    
+			<div class="form-input">
+                {{ form.text.label(class="form-control-label")}}
+                {% if form.text.errors %}
+                    {{ form.text(class="form-control form-control-lg is-invalid") }}  
+                    <div class="invalid-feedback"> 
+                        {% for error in form.text.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.text(class="form-control form-control-lg") }}
+            {% endif %}	
+            </div>
+		</fieldset>
+		</br>
+		<div class="form-group" align="center">
+			{{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        </br>
+        <div class="border-top pt-2"></div>
+	</form>
+</div>
+{% endblock %}
