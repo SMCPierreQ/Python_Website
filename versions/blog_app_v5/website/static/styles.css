@@ -8,6 +8,22 @@ p{
     font-family: 'Noto Sans Display';
 }
 
+h1{
+    font-family: "Montserrat"
+}
+
+.legend-title{
+    font-family: "Montserrat";
+}
+
+a{
+    color:#f01e2c;
+}
+
+a:hover{
+    color:#d1001f;
+}
+
 /* Anything in body tag (navbar, container, footer, etc included) */
 body {
     min-height: 100vh;
@@ -23,7 +39,36 @@ body {
     background-color: #f5f5f5;
 }
 
+/* BTN-Primary Group */
+.btn-primary{
+    background-color:#f01e2c;
+    border-color:#f01e2c;
+    font-family: 'Montserrat';
+}
 
+.btn-primary:hover{
+    background-color:#d1001f;
+    border-color:#d1001f;
+}
+
+.btn-primary:focus{
+    background-color:#d1001f;
+    border-color:#d1001f;
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+.btn-primary:active{
+    background-color:#d1001f;
+    border-color:#d1001f;
+}
+
+.btn-primary:active:focus{
+    background-color:#d1001f;
+    border-color:#d1001f;
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+/* Btn-Outline-Info Group */
 .btn-outline-info{
     color:#f01e2c;
     border-color:#f01e2c;
@@ -35,18 +80,68 @@ body {
     border-color: #f01e2c; 
 }
 
+.btn-outline-info:active{
+    background-color:#f01e2c;
+    border-color:#f01e2c;
+}
+
 .btn-outline-info:focus{
     box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
 }
 
+.btn-outline-info:active:focus{
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
 
+/* Btn-Info Group */
+.btn-info{
+    background-color:#d1001f;
+    border-color:#d1001f;
+}
+
+.btn-info:hover{
+    background-color: #f01e2c;
+    border-color: #f01e2c;
+}
+
+.btn-info:active{
+    background-color: #f01e2c;
+    border-color: #f01e2c;
+}
+
+.btn-info:focus{
+    background-color: #f01e2c;
+    border-color: #f01e2c;
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+.btn-info:active:focus{
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
+}
+
+/* Form input box */
 .form-control:focus{
     border-color: #6e6e6e;
     box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25);
 }
 
+.form-input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.form-control-label{
+    font-family: 'Noto Sans Display';
+}
+
 /* Home page CSS */
 .col-lg-9{
+    align-content: center;
+}
+
+.col-md-6{
     align-content: center;
 }
 
@@ -55,13 +150,21 @@ body {
 }
 
 .homepage-divider{
+    display: block;
     margin: 2rem 0;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;     
+    width: 90%;
 }
 
+.homepage-subheading{
+    font-family: "Zen Kaku Gothic New";
+    text-align: center;
+}
 
 .img-fluid{
     min-width: auto;
+    border-radius: 5px;
 }
 
 #titleHomepage{
@@ -69,6 +172,10 @@ body {
 }
 
 /* Account Page CSS */
+.account-information{
+    text-align: center;
+}
+
 .account-heading{
     font-family: 'Montserrat'
 }
@@ -79,10 +186,6 @@ body {
 
 .legend-account{
     font-family: 'Montserrat';
-}
-
-.form-control-label{
-    font-family: 'Noto Sans Display';
 }
 
 .form-control-lg{
@@ -121,7 +224,60 @@ body {
 }
 
 .signup-redirect:hover{
-    color: #d1001f;;
+    color: #d1001f;
+}
+
+/* Blog Page CSS */
+.post-comment{
+    font-family: 'Noto Sans Display';
+}
+
+.post-username{
+    font-family: 'Zen Kaku Gothic New';
+    color:#f01e2c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.post-username:hover{
+    color: #d1001f;
+    font-weight: 550;
+}
+
+.post-title{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.post-content{
+    font-family: 'Noto Sans Display';
+    font-weight: 400;
+}
+
+#numberComments{
+    font-size:14px;  
+    color:#f01e2c;
+}
+
+#numberComments:hover{
+    color: #d1001f;
+}
+
+#numberComments{
+    font-size:14px;     
+}
+
+#noneComments{
+    font-size:14px; 
+}
+
+#commentInput{
+    font-size:15px;
+}
+
+.dropdown-item:active{
+    background-color: #f01e2c;
 }
 
 /* Navbar CSS */
@@ -187,11 +343,12 @@ body {
 /* Carousel css */
 .carousel{
 	background-color: rgba(0,0,0,0.6);
+    border-radius: 5px;
 }
 
 .carousel-caption{
 	background-color: rgba(0,0,0,0.5);
-
+    border-radius: 5px;
 }
 
 .carousel-caption h5{
@@ -209,4 +366,6 @@ body {
     object-fit: contain;
     object-position: center;
 }
+
+/* Miscellaneous CSS */
 

@@ -1,7 +1,7 @@
 {% extends "template.html" %}{% block title %}Account{% endblock %}
 {% block content %}
 <div class="content-section">
-    <div class="media">
+    <div class="account-information">
         <img class="rounded-circle article-img" src="{{ image_file }}">
         <div class="media-body">
             <h2 class="account-heading">{{ current_user.username }}</h2>
@@ -10,9 +10,9 @@
     </div>
     <form method="POST" action="" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
+        <legend class="border-bottom mb-4 legend-title text-center">Account Information</legend>
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4 legend-account text-center">Account Information</legend>
-            <div class="form-group">
+            <div class="form-input">
                 {{ form.username.label(class="form-control-label")}}
                 
                 {% if form.username.errors %}
@@ -27,7 +27,7 @@
             {% endif %}	
         	</div>
     
-			<div class="form-group">
+			<div class="form-input">
                 {{ form.email.label(class="form-control-label")}}
                 
                 {% if form.email.errors %}
@@ -42,7 +42,7 @@
             {% endif %}	
         	</div>
             </br>
-            <div class="form-group">
+            <div class="form-input">
                 {{ form.picture.label(class="label-picture") }}
                 {{ form.picture(class="form-control-file") }}
                 {% if form.picture.errors %}
@@ -53,10 +53,11 @@
             </div>
         </fieldset>
 		</br>
-		<div class="form-group" align="center">
+		<div class="form-input" align="center">
 			{{ form.submit(class="btn btn-outline-info") }}
         </div>
         </br>
+        <div class="border-top pt-2"></div>
 	</form>
 </div>
 {% endblock %}

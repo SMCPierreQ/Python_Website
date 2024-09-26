@@ -3,9 +3,9 @@
 <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
+        <legend class="border-bottom mb-3 pb-2 legend-title text-center">Create a Post</legend>
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Create a Post</legend>
-            <div class="form-group">
+            <div class="form-input">
                 {{ form.title.label(class="form-control-label")}} 
                 {% if form.title.errors %}
                     {{ form.title(class="form-control form-control-lg is-invalid") }}  
@@ -19,7 +19,7 @@
             {% endif %}	
             </div>
     
-            <div class="form-group">
+            <div class="form-input">
                 {{ form.text.label(class="form-control-label")}}
                 
                 {% if form.text.errors %}
@@ -38,7 +38,8 @@
         <div class="form-group" align="center">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
+        </br>
+        <div class="border-top pt-2"></div>
     </form>
 </div>
-</br>
 {% endblock %}

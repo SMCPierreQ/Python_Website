@@ -12,6 +12,7 @@ auth = Blueprint("auth",__name__)
 @auth.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
+        flash('You are logged in, to access this page you must log out. ', category='error')
         return redirect(url_for('views.home'))
     if request.method == "POST":
         email = request.form.get("email")
@@ -31,6 +32,7 @@ def login():
 @auth.route("/signup", methods=['GET', 'POST'])
 def sign_up():
     if current_user.is_authenticated:
+        flash('You are logged in, to access this page you must log out. ', category='error')
         return redirect(url_for('views.home'))
     form = RegistrationForm()
     if form.validate_on_submit():

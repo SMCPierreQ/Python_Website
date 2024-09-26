@@ -6,16 +6,19 @@
 	<div class="card border-dark">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.user.image_file) }}">
 		<div class="card-header d-flex justify-content-between align-items-center">
-			<a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+			<a class="post-username" href="/posts/{{post.user.username}}">{{post.user.username}}</a>
 				<div><!-- this is a new div dropdown menu. -->
 					{% if user.id == post.author %}
 					<div class="btn-group">
+            <!-- Dropdown button-->
 						<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
 						<ul class="dropdown-menu">
 							<li>
+                <!-- Dropdown delete-->
 								<a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
 							</li>
               <li>
+                <!-- Dropdown Update-->
 								<a href="/update-post/{{post.id}}" class="dropdown-item">Update</a>
 							</li>
 						</ul>
@@ -26,15 +29,15 @@
 			<div class="card-body">
         <div class="card-text post-title">{{post.title}}</div>
 				<br />
-				<div class="card-text">{{post.text}}</div>
+				<div class="card-text post-content">{{post.text}}</div>
 				<br />
 				<div class="collapse" id="comments-{{post.id}}">
 					<div class="card">
 						<div class="card-body" id="comments-expanded-{{post.id}}">
 							{% for comment in post.comments %}
 							<div class="d-flex justify-content-between align-items-center">
-								<div>
-									<a href="/posts/{{comment.user.username}}"
+								<div class="post-comment">
+									<a class="post-username" href="/posts/{{comment.user.username}}"
 									>{{comment.user.username}}</a>: {{comment.text}}
 								</div>
                 <div>
@@ -65,23 +68,23 @@
         <p class="card-text">
           {% if post.comments|length > 0 %}
           <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
-            <small>View {{post.comments|length}} Comments</small>
+            <small id="numberComments">View {{post.comments|length}} Comments</small>
           </a>
           {% else %}
-          <small class="text-muted">No Comments</small>
+          <small class="text-muted" id="noneComments">No Comments</small>
           {% endif %}
         </p>
         <form
-        class="input-group mb-3"
-        method="POST"
-        action="/create-comment/{{post.id}}"
+          class="input-group mb-3"
+          method="POST"
+          action="/create-comment/{{post.id}}"
         >
           <input
             type="text"
-            id="text"
+            id="commentInput"
             name="text"
             class="form-control"
-            placeholder="Comment Something!"
+            placeholder="Add a comment..."
           />
           <button type="submit" class="btn btn-primary">Comment</button>
         </form>

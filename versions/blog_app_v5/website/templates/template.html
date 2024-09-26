@@ -63,16 +63,12 @@
       {% for category, message in messages %} {% if category =='error' %}
       <div class="alert alert-danger alert-dismissable fade show mb-0" role="alert">
         {{message}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="danger"></button>
       </div>
       {% else %}
       <div class="alert alert-success alert-dismissable fade show mb-0" role="alert">
         {{message}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="success"></button>
       </div>
      
       {% endif %} {% endfor %} {% endif %} {% endwith %}
