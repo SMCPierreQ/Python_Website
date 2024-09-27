@@ -1,38 +1,43 @@
-{% extends "template.html" %}{% block title %}Login{% endblock %}
-{% block content %}
+{% extends "template.html" %}{% block title %}Login{% endblock %} {% block
+content %}
 
 <!-- Setting form method as POST -->
 <form method="POST">
-    <h3 class="login-heading border-bottom pb-2" align="center">Login</h3>
-    <div class="form-input">
-        <!-- Form input for email -->
-        <label class="label-login" for="email">Email Address</label>
-        <input
-            type="text"
-            id="email"
-            name="email"
-            class="form-control"
-            placeholder="Enter Email"
-        />
-        <br/>
-        <!-- Form input for email -->
-        <label class="label-login" for="password">Password</label>
-        <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Enter Password"
-        />
-        <!-- Redirects user to sign up page if they don't have an account -->
-        <small class="text-muted">Don't have an account? <a class="ml-2 signup-redirect" href="{{ url_for('auth.sign_up') }}">Sign Up</a>
-        <br/>
-        <!-- Button to login after inputting all details -->
-        <div align="center">
-            <button class="btn btn-outline-info" type="submit">Login</button>
-        </div>
-        <br/>
+  <h3 class="login-heading border-bottom pb-2" align="center">Login</h3>
+  <div class="form-input">
+    <!-- Form input for email -->
+    <label class="label-login" for="email">Email Address</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="Enter Email"
+    />
+    <br />
+    <!-- Form input for email -->
+    <label class="label-login" for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      placeholder="Enter Password"
+    />
+    <!-- Redirects user to sign up page if they don't have an account -->
+    <small class="text-muted"
+      >Don't have an account?
+      <a class="ml-2 signup-redirect" href="{{ url_for('auth.sign_up') }}"
+        >Sign Up</a
+      ></small
+    >
+    <br />
+    <!-- Button to login after inputting all details -->
+    <div align="center">
+      <button class="btn btn-outline-info" type="submit">Login</button>
     </div>
-    <div class="border-top pt-2"></div>
+    <br />
+  </div>
+  <div class="border-top pt-2"></div>
 </form>
 {% endblock %}

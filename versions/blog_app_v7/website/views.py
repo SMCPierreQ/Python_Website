@@ -5,7 +5,7 @@ import secrets
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, abort
 from flask_login import login_required, current_user
 from .models import Post, User, Comment
-from .forms import RegistrationForm, UpdateAccountForm, PostForm
+from .forms import UpdateAccountForm, PostForm
 from . import db
 
 views = Blueprint("views", __name__)

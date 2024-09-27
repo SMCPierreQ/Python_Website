@@ -1,9 +1,11 @@
-{% extends "posts_div.html" %} {% block title %} {{username}}'s Posts {% endblock %}
-{% block header %} {{username}}'s Posts {% endblock %}
-{% block footer %}
-    <!-- Button to go back to blog page-->
-    <div align="center">
-        <a href="/blog"><button type="button" class="btn btn-primary btn-lg">Back</button></a>
-    </div>
-    <br />
+{% extends "posts_div.html" %} {% block title %} {{username}}'s Posts {%
+endblock %} {% block header %} {{username}}'s Posts {% endblock %} {% block
+footer %}
+<!-- Button to go back to blog page-->
+<div align="center">
+  <a href="/blog"
+    ><button type="button" class="btn btn-primary btn-lg">Back</button></a
+  >
+</div>
+<br />
 {% endblock %}
